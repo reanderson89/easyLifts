@@ -14,7 +14,7 @@ document.querySelector("h1").innerHTML += ` of ${num}`
     while(percentageStart <= .95){
         addHere.innerHTML += `
         <div class="row justify-content-center">
-            <div class="col-3">
+            <div class="col-6 text-center">
                 <h4>${Math.round(percentageStart*100)}%: ${Math.round(num*percentageStart)}${unit}</h4>
             </div>
         </div>
