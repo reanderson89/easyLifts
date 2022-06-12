@@ -6,16 +6,17 @@ const lbKg = document.getElementById("lbKg");
 const doMath = (num) => {
     addHere.innerHTML = "";
     localStorage.setItem("current-number", num);
-document.querySelector("h1").innerHTML = `Percentages`
-document.querySelector("h1").innerHTML += ` of ${num}`
     let unit = lbKg.value
+document.querySelector("h1").innerHTML = `Percentages`
+document.querySelector("h1").innerHTML += ` of ${num}${unit}`
+    
     let percentageStart = .40;
 
     while(percentageStart <= .95){
         addHere.innerHTML += `
         <div class="row justify-content-center">
             <div class="col-6 text-center">
-                <h4>${Math.round(percentageStart*100)}%: ${Math.round(num*percentageStart)}${unit}</h4>
+                <h4>${Math.round(percentageStart*100)}%: ${Math.round(num*percentageStart)}</h4>
             </div>
         </div>
         `;
@@ -30,4 +31,5 @@ if(localStorage.getItem("current-number")){
 btn.addEventListener("click", function(){
     let number = num.value;
     doMath(number);
+    num.value = null;
 })
